@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Prediction History</h2>
+  <table class="table table-bordered mt-3">
+      <thead>
+          <tr>
+              <th>Timestamp</th>
+              <th>Input Data</th>
+              <th>Predicted Output</th>
+          </tr>
+      </thead>
+      <tbody>
+          {% for record in history %}
+          <tr>
+              <td>{{ record.timestamp }}</td>
+              <td>{{ record.input_data }}</td>
+              <td>{{ record.predicted_output }}</td>
+          </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+  <a href="{{ url_for('index') }}" class="btn btn-secondary">Back</a>
+{% endblock %}
+
+
+
